@@ -53,4 +53,7 @@ puts -2.398374574985.round()
 puts 90 / 100.to_f
 
 g = "html, css, javascript, ruby, rails"
-p g.split(",")
+h = g.split(",")
+h.each do |i|
+  puts i.strip
+end
