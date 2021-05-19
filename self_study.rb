@@ -57,3 +57,9 @@ h = g.split(",")
 h.each do |i|
   puts i.strip
 end
+
+j = 'hoge'
+puts j.capitalize
+puts j.upcase
+k = j.upcase
+puts k.downcase
