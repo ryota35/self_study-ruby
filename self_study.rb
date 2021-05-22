@@ -94,3 +94,7 @@ puts k.downcase
 
 m = "abcdefg"
 puts m.reverse
+
+n = ["r", "y", "o", "t", "a"]
+p n.join
+p n.pop
