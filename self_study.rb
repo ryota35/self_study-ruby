@@ -98,3 +98,7 @@ puts m.reverse
 n = ["r", "y", "o", "t", "a"]
 p n.join
 p n.pop
+
+a1 = [200, 400, 600]
+a2 = a1.map{ |x| x * 2 }
+p a2
