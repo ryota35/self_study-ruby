@@ -29,40 +29,40 @@ f = "hoo"
 
 puts e + f
 
-# g = gets.to_i
+g = gets.to_i
 
-# if g % 3 == 0 && g % 5 == 0 
-#   puts 'FizzBuzz'
-# elsif g % 3 == 0
-#   puts 'Fizz'
-# elsif g % 5 == 0
-#   puts 'Buzz'
-# else
-#   puts '3でも5でも割り切れません'
-# end
-
-puts 1.22323454.floor
-puts -2.398374574985.floor
-
-puts 1.22323454.ceil
-puts -2.398374574985.ceil
-
-puts 1.62623454.round(2)
-puts -2.398374574985.round()
-
-puts 90 / 100.to_f
-
-g = "html, css, javascript, ruby, rails"
-h = g.split(",")
-h.each do |i|
-  puts i.strip
+if g % 15 == 0
+  p 'FizzBuzz'
+elsif g % 3 == 0
+  p 'Fizz'
+elsif g % 5 == 0
+  p 'Buzz'
+else
+  p g.to_s
 end
 
-j = 'hoge'
-puts j.capitalize
-puts j.upcase
-k = j.upcase
-puts k.downcase
+# puts 1.22323454.floor
+# puts -2.398374574985.floor
+
+# puts 1.22323454.ceil
+# puts -2.398374574985.ceil
+
+# puts 1.62623454.round(2)
+# puts -2.398374574985.round()
+
+# puts 90 / 100.to_f
+
+# g = "html, css, javascript, ruby, rails"
+# h = g.split(",")
+# h.each do |i|
+#   puts i.strip
+# end
+
+# j = 'hoge'
+# puts j.capitalize
+# puts j.upcase
+# k = j.upcase
+# puts k.downcase
 
 # def convert_leet(chara)
 #   case chara
@@ -92,13 +92,46 @@ puts k.downcase
 # output = convert.join
 # puts output
 
-m = "abcdefg"
-puts m.reverse
+# m = "abcdefg"
+# puts m.reverse
 
-n = ["r", "y", "o", "t", "a"]
-p n.join
-p n.pop
+# n = ["r", "y", "o", "t", "a"]
+# p n.join
+# p n.pop
 
-a1 = [200, 400, 600]
-a2 = a1.map{ |x| x * 2 }
-p a2
+# a1 = [200, 400, 600]
+# # a2 = n.map{ |x| x * 2 }
+# a2 = n.map(&:upcase)
+# p a2
+
+input_line = gets.chomp
+x = input_line.chars
+
+def leet(text)
+    if text == "A"
+        "4"
+    elsif text == "E"
+        "3"
+    elsif text == "G"
+        "6"
+    elsif text == "I"
+        "1"
+    elsif text == "O"
+        "0"
+    elsif text == "S"
+        "5"
+    elsif text == "Z"
+        "2"
+    elsif text == "E"
+        "3"
+    else
+        text
+    end
+end
+
+y = []
+x.each do |i|
+    y.push(leet(i))
+end
+
+puts y.join
