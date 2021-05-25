@@ -29,17 +29,17 @@ f = "hoo"
 
 puts e + f
 
-g = gets.to_i
+# g = gets.to_i
 
-if g % 15 == 0
-  p 'FizzBuzz'
-elsif g % 3 == 0
-  p 'Fizz'
-elsif g % 5 == 0
-  p 'Buzz'
-else
-  p g.to_s
-end
+# if g % 15 == 0
+#   p 'FizzBuzz'
+# elsif g % 3 == 0
+#   p 'Fizz'
+# elsif g % 5 == 0
+#   p 'Buzz'
+# else
+#   p g.to_s
+# end
 
 # puts 1.22323454.floor
 # puts -2.398374574985.floor
@@ -104,34 +104,35 @@ end
 # a2 = n.map(&:upcase)
 # p a2
 
-input_line = gets.chomp
-x = input_line.chars
+# input_line = gets.chomp
+# x = input_line.chars
 
-def leet(text)
-    if text == "A"
-        "4"
-    elsif text == "E"
-        "3"
-    elsif text == "G"
-        "6"
-    elsif text == "I"
-        "1"
-    elsif text == "O"
-        "0"
-    elsif text == "S"
-        "5"
-    elsif text == "Z"
-        "2"
-    elsif text == "E"
-        "3"
-    else
-        text
-    end
-end
+# def leet(text)
+#     if text == "A"
+#         "4"
+#     elsif text == "E"
+#         "3"
+#     elsif text == "G"
+#         "6"
+#     elsif text == "I"
+#         "1"
+#     elsif text == "O"
+#         "0"
+#     elsif text == "S"
+#         "5"
+#     elsif text == "Z"
+#         "2"
+#     elsif text == "E"
+#         "3"
+#     else
+#         text
+#     end
+# end
 
-y = []
-x.each do |i|
-    y.push(leet(i))
-end
+# y = []
+# x.each do |i|
+#     y.push(leet(i))
+# end
 
-puts y.join
+# puts y.join
+
