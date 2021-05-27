@@ -136,3 +136,12 @@ puts e + f
 
 # puts y.join
 
+arr = [1, 2, 3]
+p arr.unshift(0)
+p arr.unshift(1, 2)
+
+p [1, 2, 3].zip([4, 5], [7, 8])
+
+array = [1, 2, 2, 2, 3, 3, 4, 5]
+array.delete(2)
+p array
