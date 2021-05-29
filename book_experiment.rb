@@ -83,86 +83,114 @@
 # range = 1...5
 # p range.include?(5)
 
-def liquid?(tempreture)
-  (0...100).include?(tempreture)
-end
+# def liquid?(tempreture)
+#   (0...100).include?(tempreture)
+# end
 
-p liquid?(-1)
+# p liquid?(-1)
 
-def charge(age)
-  case age
+# def charge(age)
+#   case age
 
-  when 0..5
-    0
-  when 6..12
-    300
-  when 13..18
-    600
-  else
-    1000
-  end
-end
+#   when 0..5
+#     0
+#   when 6..12
+#     300
+#   when 13..18
+#     600
+#   else
+#     1000
+#   end
+# end
 
-p charge(7)
+# p charge(7)
 
-p (1..10).to_a
-p [*1..10]
+# p (1..10).to_a
+# p [*1..10]
 
-numbers = []
-(1..10).step(2){ |n| numbers << n}
-p numbers
+# numbers = []
+# (1..10).step(2){ |n| numbers << n}
+# p numbers
 
-a = [1, 2, 3, 4, 5]
-b = []
-a.delete_if do |n|
-  n.even?
-end
-p a
+# a = [1, 2, 3, 4, 5]
+# b = []
+# a.delete_if do |n|
+#   n.even?
+# end
+# p a
 
-a = [1, 2, 3]
-b = [3, 4, 5]
+# a = [1, 2, 3]
+# b = [3, 4, 5]
 
-p a | b
-p a - b
-p a & b
+# p a | b
+# p a - b
+# p a & b
 
-c = Array.new
-p c
+# c = Array.new
+# p c
 
-*e, f = 100, 200, 300
-p e
-p f
+# *e, f = 100, 200, 300
+# p e
+# p f
 
-p a.push(*b)
+# p a.push(*b)
 
-p %w(apple\ big orange\ small banana)
-p [*1..5]
-p Array.new(10) {|n| n % 3 + 1}
+# p %w(apple\ big orange\ small banana)
+# p [*1..5]
+# p Array.new(10) {|n| n % 3 + 1}
 
-a = Array.new(5, 'default')
-a[0].upcase!
-p a
+# a = Array.new(5, 'default')
+# a[0].upcase!
+# p a
 
-a = Array.new(5) { 'default' } 
-a[0].upcase!
-p a
+# a = Array.new(5) { 'default' } 
+# a[0].upcase!
+# p a
 
-a = %w(apple orange melon banana)
-a.delete_if.with_index do |fruit, n|
-  fruit.include?('a') && n.odd?
-end
-p a
+# a = %w(apple orange melon banana)
+# a.delete_if.with_index do |fruit, n|
+#   fruit.include?('a') && n.odd?
+# end
+# p a
 
-a = []
-(0..100).step(2).map{|n| a << n}
-p a
+# a = []
+# (0..100).step(2).map{|n| a << n}
+# p a
 
-a = []
+# a = []
 # a << 1 while a.size < 5 
 # p a
 
-begin
-  a << 1
-end while false 
+# begin
+#   a << 1
+# end while false 
 
-p a
+# p a
+
+# numbers = [1, 2, 3, 4, 5]
+
+# loop do
+#   n = numbers.sample
+#   puts n
+#   break if n == 5
+# end
+
+numbers = [1, 2, 3]
+fruits = %w(apple melon orange)
+
+catch :done do
+  fruits.shuffle.each do |fruit|
+    numbers.shuffle.each do |n|
+      puts "#{fruit}, #{n}"
+      if fruit == "orange" && n == 3
+        throw :done
+      end
+    end
+  end
+end
+
+numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+p numbers.each_slice(3)
+
+p (0..).size
