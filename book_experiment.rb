@@ -193,4 +193,24 @@ numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9]
 
 p numbers.each_slice(3)
 
-p (0..).size
+p numbers.slice(0, 3)
+
+a = {}
+p a.class
+
+a = [1, 2, 3]
+b = [3, 2, 1]
+
+p a == b
+
+c = { a: "A", b: "B", c: "C" }
+
+p c
+
+def buy_burger(menu, drink:, potato:)
+  puts "#{menu}バーガー"
+  puts "ドリンクを購入する" if drink
+  puts "ポテトを購入する" if potato
+end
+params = {drink: true, potato: false}
+buy_burger('fish', params)
