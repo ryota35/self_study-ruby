@@ -175,42 +175,107 @@
 #   break if n == 5
 # end
 
-numbers = [1, 2, 3]
-fruits = %w(apple melon orange)
+# numbers = [1, 2, 3]
+# fruits = %w(apple melon orange)
 
-catch :done do
-  fruits.shuffle.each do |fruit|
-    numbers.shuffle.each do |n|
-      puts "#{fruit}, #{n}"
-      if fruit == "orange" && n == 3
-        throw :done
-      end
-    end
+# catch :done do
+#   fruits.shuffle.each do |fruit|
+#     numbers.shuffle.each do |n|
+#       puts "#{fruit}, #{n}"
+#       if fruit == "orange" && n == 3
+#         throw :done
+#       end
+#     end
+#   end
+# end
+
+# numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+# p numbers.each_slice(3)
+
+# p numbers.slice(0, 3)
+
+# a = {}
+# p a.class
+
+# a = [1, 2, 3]
+# b = [3, 2, 1]
+
+# p a == b
+
+# c = { a: "A", b: "B", c: "C" }
+
+# p c
+
+# def buy_burger(menu, option = {})
+#   puts option
+# end
+
+# buy_burger('fish', drink: true, potato: true, salda: true)
+
+# array = [1, 2, 3, 4, 5]
+# a = 0
+# array.each { |n| a += n }
+# p a
+
+1234567890の正の約数のうち、2000000以下のものを全て足し合わせたときの和を求めてください。
+
+
+def divisor(num)
+  result = []
+  i = 1
+  while i <= 2000000 do
+    remainder = num % i
+    if remainder == 0
+      result << i
+    end 
+    i += 1
   end
+  return result
 end
 
-numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9]
 
-p numbers.each_slice(3)
+r = divisor(1234567890)
+puts r.sum
 
-p numbers.slice(0, 3)
+a = [*1..80]
+b = []
+a.map{ |n| b << n ** 4 }
+p b.sum
 
-a = {}
-p a.class
+整数Nについて、1からNまでの整数の逆数の和を「Nまでの逆数和」と呼ぶことにします。
 
-a = [1, 2, 3]
-b = [3, 2, 1]
+1までの逆数和 = 1/1 = 1
+2までの逆数和 = 1/1 + 1/2 = 1.5
+3までの逆数和 = 1/1 + 1/2 + 1/3 = 1.8333333333…
+4までの逆数和 = 1/1 + 1/2 + 1/3 + 1/4 = 2.0833333333…
+Nまでの逆数和が9を超えるような最小のNを求めてください。
 
-p a == b
+p 1 / 2.to_f
 
-c = { a: "A", b: "B", c: "C" }
+a = []
+i = 1
 
-p c
-
-def buy_burger(menu, drink:, potato:)
-  puts "#{menu}バーガー"
-  puts "ドリンクを購入する" if drink
-  puts "ポテトを購入する" if potato
+loop do
+  a << 1 / i.to_f
+  i += 1
+  if a.sum > 9
+    break
+  end
+  
 end
-params = {drink: true, potato: false}
-buy_burger('fish', params)
+
+p a.size
+
+次の条件の少なくとも一方を満たす整数のことを「A的な数」と呼ぶことにします。
+
+3の倍数である。
+十進法で書いた場合に「3」が含まれる。
+例えば、9、31、42、135は何れも「A的な数」です。
+
+1から40000までの整数のうち「A的な数」だけを足し合わせたときの合計を求めてください。
+
+a = [*1..40000]
+b = []
+a.each { |n| b << n if n % 3 == 0 || n.to_s.chars.include?("3") }
+p b.sum
