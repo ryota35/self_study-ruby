@@ -298,3 +298,11 @@ Java and JavaScript are different.
 TEXT
 
 p text.scan(/[A-Z][A-Za-z]+/)
+
+text = <<TEXT
+I like Ruby.
+Python is a great.
+Java or JavaScript are difficult.
+TEXT
+
+p text.scan(/[A-Z][A-Za-z]+/)
