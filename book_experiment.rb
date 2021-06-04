@@ -306,3 +306,12 @@ Java or JavaScript are difficult.
 TEXT
 
 p text.scan(/[A-Z][A-Za-z]+/)
+
+array = [3, 2, 5, 1, 4, 2]
+p array.sort
+
+array = [3, 2, 5, 1, 4, 2]
+p array.sort
+
+array = [3, 2, 5, 1, 4, 2]
+p array.sort
