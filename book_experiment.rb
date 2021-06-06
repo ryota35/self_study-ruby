@@ -313,5 +313,8 @@ p array.sort
 array = [3, 2, 5, 1, 4, 2]
 p array.sort
 
-array = [3, 2, 5, 1, 4, 2]
-p array.sort
+array = [303, 2, 5, 1, 4, 2]
+p array.include?(3)
+
+array = [303, 2, 5, 1, 4, 2]
+p array.include?(3)
