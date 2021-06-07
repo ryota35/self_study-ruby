@@ -318,3 +318,21 @@ p array.include?(3)
 
 array = [303, 2, 5, 1, 4, 2]
 p array.include?(3)
+
+a = 'okakura'
+p a.slice(2, 4)
+
+text =  <<~TEXT
+名前：伊藤淳一
+電話：03-1234-5678
+住所：兵庫県西脇市板波町1-2-3
+TEXT
+p text.scan(/\d\d-\d\d\d\d-\d\d\d\d/)
+
+text =  <<~TEXT
+23456545675892784324132432354
+12343453243325435432
+543542353454354364
+TEXT
+p text.scan(/\d\d/).map(&:to_i)
+
