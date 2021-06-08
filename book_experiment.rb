@@ -347,4 +347,51 @@ TEXT
 
 puts text.split("\n").grep(/クープ.?バ[ケゲ]ット/)
 
+html = <<-HTML
+<select name="game_console">
+<option value="none"></option>
+<option value="wii_u" selected>Wii U</option>
+<option value="ps4">プレステ4</option>
+<option value="gb">ゲームボーイ</option>
+</select>
+HTML
 
+replaced = html.gsub(/<option value="(\w+)"(?: selected)?>(.*)<\/option>/, '\1,\2')
+
+puts replaced
+
+text = <<-TEXT
+def hello(name)
+  puts "Hello, \#{name}!"
+end
+
+hello('Alice')
+     
+hello('Bob')
+	
+hello('Carol')
+TEXT
+
+puts text.gsub(/^[ \t]+$/, '') 
+
+text = <<-TEXT
+Lorem ipsum dolor sit amet.
+Vestibulum luctus est ut mauris tempor tincidunt.
+         Suspendisse eget metus
+      Curabitur nec urna eget ligula accumsan congue.
+TEXT
+
+puts text.gsub(/^[ \t]+/, '')
+
+hash =<<-TEXT
+ {
+  japan:	'yen',
+  america:'dollar',
+  italy:     'euro'
+}
+TEXT
+
+p hash.gsub(/:[ \t]+/, ': ')
+
+regex = /\d{3}-\d{4}/
+p regex.class
