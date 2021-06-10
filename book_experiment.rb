@@ -491,25 +491,34 @@
 # user.name = "Alice"
 # puts user.name
 
+# class User
+
+#   def initialize(name)
+#     @name = name
+#   end
+
+#   def self.create_users(names)
+#     names.map{ |n| User.new(n) }
+#   end
+
+#   def hello
+#     puts "Hello, I am #{@name}"
+#   end
+
+# end
+
+# names = %w{alice bob carol}
+# users = User.create_users(names)
+# users.each do |user|
+#   user.hello
+# end
+
 class User
-
-  def initialize(name)
-    @name = name
-  end
-
-  def self.create_users(names)
-    names.map{ |n| User.new(n) }
-  end
-
-  def hello
-    puts "Hello, I am #{@name}"
-  end
-
 end
 
-names = %w{alice bob carol}
-users = User.create_users(names)
-users.each do |user|
-  user.hello
-end
-
+user = User.new
+p user.to_s
+p User.superclass
+p user.methods.sort
+p user.instance_of?(User)
+p user.is_a?(String)
