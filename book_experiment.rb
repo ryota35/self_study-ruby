@@ -452,30 +452,64 @@
 
 # p "Hello\nBye" =~ /hello.bye/im
 
-regexp = Regexp.new('Hello.Bye', Regexp::MULTILINE)
-p "Hello\nBye" =~ regexp
+# regexp = Regexp.new('Hello.Bye', Regexp::MULTILINE)
+# p "Hello\nBye" =~ regexp
+
+# class User
+#   attr_reader :first_name, :last_name, :age
+
+#   def initialize(first_name, last_name, age)
+#     @first_name = first_name
+#     @last_name = last_name
+#     @age = age
+#   end
+
+#   def full_name
+#     "#{first_name} #{last_name}"
+#   end
+
+# end
+
+# users = []
+# users << User.new('Alice', 'Ruby', 20)
+# users << User.new('Bob', 'Python', 30)
+
+# users.each do |user|
+#   puts "氏名: #{user.full_name}、 年齢 #{user.age}"
+# end
+
+
+# class User
+#   attr_accessor :name
+#   def initialize(name)
+#     @name = name
+#   end
+# end
+
+# user = User.new("ryota")
+
+# user.name = "Alice"
+# puts user.name
 
 class User
-  attr_reader :first_name, :last_name, :age
 
-  def initialize(first_name, last_name, age)
-    @first_name = first_name
-    @last_name = last_name
-    @age = age
+  def initialize(name)
+    @name = name
   end
 
-  def full_name
-    "#{first_name} #{last_name}"
+  def self.create_users(names)
+    names.map{ |n| User.new(n) }
+  end
+
+  def hello
+    puts "Hello, I am #{@name}"
   end
 
 end
 
-users = []
-users << User.new('Alice', 'Ruby', 20)
-users << User.new('Bob', 'Python', 30)
-
+names = %w{alice bob carol}
+users = User.create_users(names)
 users.each do |user|
-  puts "氏名: #{user.full_name}、 年齢 #{user.age}"
+  user.hello
 end
-
 
