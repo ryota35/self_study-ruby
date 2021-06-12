@@ -552,12 +552,12 @@ class DVD < Product
 end
 
 product = Product.new('A great movie', 1000)
-# p product.name
-# p product.price
+p product.name
+p product.price
 p product.to_s
 
 dvd = DVD.new('A great movie', 1000, 120)
-# p dvd.name
-# p dvd.price
-# p dvd.running_time
+p dvd.name
+p dvd.price
+p dvd.running_time
 p dvd.to_s
