@@ -561,3 +561,13 @@ p dvd.name
 p dvd.price
 p dvd.running_time
 p dvd.to_s
+
+p 1.equal?(1.0)
+p 1.object_id
+p (1.0).object_id
+
+p 1 == 1.0
+p 1.eql?(1.0)
+
+a = [1, "1"]
+p a
