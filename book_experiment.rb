@@ -513,61 +513,113 @@
 #   user.hello
 # end
 
-class User
-end
+# class User
+# end
 
-user = User.new
-p user.to_s
-p User.superclass
-p user.methods.sort
-p user.instance_of?(User)
-p user.is_a?(String)
+# user = User.new
+# p user.to_s
+# p User.superclass
+# p user.methods.sort
+# p user.instance_of?(User)
+# p user.is_a?(String)
+
+# class Product
+#   attr_accessor :name, :price
+
+#   def initialize(name, price)
+#     @name = name
+#     @price = price
+#   end
+
+#   def to_s
+#     "name: #{name}, price: #{price}"
+#   end
+
+# end
+
+# class DVD < Product
+#   attr_accessor :running_time
+
+#   def initialize(name, price, running_time)
+#     super(name, price)
+#     @running_time = running_time
+#   end
+
+#   def to_s
+#     "#{super}, running_time: #{running_time}"
+#   end
+
+# end
+
+# product = Product.new('A great movie', 1000)
+# p product.name
+# p product.price
+# p product.to_s
+
+# dvd = DVD.new('A great movie', 1000, 120)
+# p dvd.name
+# p dvd.price
+# p dvd.running_time
+# p dvd.to_s
+
+# p 1.equal?(1.0)
+# p 1.object_id
+# p (1.0).object_id
+
+# p 1 == 1.0
+# p 1.eql?(1.0)
+
+# a = [1, "1"]
+# p
+
+# module Greeter
+#   def hello
+#     'hello'
+#   end
+# end
+
+# greeter = Greeter.new
+
+# module AwesomeGreeter < Greeter
+# end
+
+module Loggable
+  private
+
+  def log(text)
+    puts "[LOG] #{text}"
+  end
+end
 
 class Product
-  attr_accessor :name, :price
+  extend Loggable
 
-  def initialize(name, price)
-    @name = name
-    @price = price
-  end
+  # def title
+  #   log('title is called.')
+  #   'A great movie'
+  # end
 
-  def to_s
-    "name: #{name}, price: #{price}"
+  # def self.create_products(names)
+  #   log 'create_products is called'
+  # end
+  log('Defined Product class.')
+end
+
+class User
+  include Loggable
+
+  def name
+    log('name is called.')
+    'Alice'
   end
 
 end
 
-class DVD < Product
-  attr_accessor :running_time
+# product = Product.new
+# p product.title
+# Product.create_products([])
 
-  def initialize(name, price, running_time)
-    super(name, price)
-    @running_time = running_time
-  end
+# user = User.new
+# p user.name
 
-  def to_s
-    "#{super}, running_time: #{running_time}"
-  end
-
-end
-
-product = Product.new('A great movie', 1000)
-p product.name
-p product.price
-p product.to_s
-
-dvd = DVD.new('A great movie', 1000, 120)
-p dvd.name
-p dvd.price
-p dvd.running_time
-p dvd.to_s
-
-p 1.equal?(1.0)
-p 1.object_id
-p (1.0).object_id
-
-p 1 == 1.0
-p 1.eql?(1.0)
-
-a = [1, "1"]
-p a
+# product.log('public?')
