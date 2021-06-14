@@ -583,37 +583,37 @@
 # module AwesomeGreeter < Greeter
 # end
 
-module Loggable
-  private
+# module Loggable
+#   private
 
-  def log(text)
-    puts "[LOG] #{text}"
-  end
-end
+#   def log(text)
+#     puts "[LOG] #{text}"
+#   end
+# end
 
-class Product
-  extend Loggable
+# class Product
+#   extend Loggable
 
-  # def title
-  #   log('title is called.')
-  #   'A great movie'
-  # end
+#   # def title
+#   #   log('title is called.')
+#   #   'A great movie'
+#   # end
 
-  # def self.create_products(names)
-  #   log 'create_products is called'
-  # end
-  log('Defined Product class.')
-end
+#   # def self.create_products(names)
+#   #   log 'create_products is called'
+#   # end
+#   log('Defined Product class.')
+# end
 
-class User
-  include Loggable
+# class User
+#   include Loggable
 
-  def name
-    log('name is called.')
-    'Alice'
-  end
+#   def name
+#     log('name is called.')
+#     'Alice'
+#   end
 
-end
+# end
 
 # product = Product.new
 # p product.title
@@ -623,3 +623,85 @@ end
 # p user.name
 
 # product.log('public?')
+# p Array.included_modules
+# p 1 <=> 2
+# module Baseball
+#   class Second
+#     def initialize(player, uniform_number)
+#       @player = player
+#       @uniform_number = uniform_number
+#     end
+#   end
+# end
+
+# module Clock
+# end
+# class Clock::Second
+#   def initialize(digits)
+#     @digits = digits
+#   end
+# end
+
+
+# Baseball::Second.new('alice', 13)
+# Clock::Second.new('alice', 67)
+
+module Loggable
+  module_function
+  def log(text)
+    puts "[LOG] #{text}"
+  end
+
+end
+
+Loggable.log('Hello')
+
+class Product
+  include Loggable
+
+  def title
+    log('title is called')
+    'A great movie'
+  end
+end
+
+product = Product.new
+p product.title
+
+p Math::PI.methods.grep(/^r/)
+
+p NoMethodError.new.methods.grep(/message/)
+
+begin
+  1 / 0
+rescue => e
+  puts "エラークラス: #{e.class}"
+  puts "エラーメッセージ: #{e.message}"
+  puts "バックトレース: ------"
+  puts e.backtrace
+  puts "------"
+end
+
+begin
+  'avc'.foo
+rescue ZeroDivisionError, NoMethodError => e
+  puts "0で除算したか、存在しないメソッドが呼び出されました"
+  puts "#{e.class} #{e.message}"
+end
+
+p NoMethodError.superclass.superclass
+
+retry_count = 0
+begin
+  1 / 0
+rescue
+  retry_count += 1
+  if retry_count <= 3
+    puts "retryします #{retry_count}回目"
+    retry
+  else
+    puts 'retryに失敗しました'
+  end
+end
+
+p Kernel.include?(gets)
