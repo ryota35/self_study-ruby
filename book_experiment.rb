@@ -704,4 +704,37 @@ rescue
   end
 end
 
-p Kernel.include?(gets)
+file = File.open('lib\sample.txt', 'r')
+p file.gets
+
+# def greeting(&a)
+#   puts 'おはよう'
+#   unless a.nil?
+#     text = a.call('こんにちは')
+#     puts text
+#   end
+#   puts 'さよなら'
+# end
+
+# greeting do |text|
+#   text * 2
+# end
+
+# hello_proc = Proc.new do |a = 0, b = 0| a + b end
+
+# p hello_proc.call
+
+def greeting(block)
+  puts 'おはよう'
+  text = block.call('こんにちは')
+  puts text
+  puts 'こんばんわ'
+end
+
+repeat_proc = Proc.new{|text| text * 2}
+
+greeting(repeat_proc)
+
+sample = -> (a, b){a + b}
+sample2 = proc {|a, b| a.to_i + b.to_i}
+p sample2.call(10)
