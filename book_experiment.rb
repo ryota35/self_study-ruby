@@ -705,7 +705,9 @@ rescue
 end
 
 file = File.open('lib\sample.txt', 'r')
-p file.gets
+file.each_line do |r|
+  puts r
+end
 
 # def greeting(&a)
 #   puts 'おはよう'
@@ -738,3 +740,13 @@ greeting(repeat_proc)
 sample = -> (a, b){a + b}
 sample2 = proc {|a, b| a.to_i + b.to_i}
 p sample2.call(10)
+
+require 'logger'
+logger = Logger.new('./rubyfile.log')
+logger.debug("errorのログ出力")
+
+p '2'.method(:to_i).source_location
+
+file = File.open('lib\sample.txt', 'a')
+file.puts 'tuika'
+file.close
