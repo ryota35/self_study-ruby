@@ -750,3 +750,53 @@ p '2'.method(:to_i).source_location
 file = File.open('lib\sample.txt', 'a')
 file.puts 'tuika'
 file.close
+
+
+class Parent
+  attr_accessor :name
+  def initialize(name)
+    @name = name
+  end
+
+  def self.hello
+    puts "hello world class"
+  end
+
+  def hello
+    puts "hello world #{@name}"
+  end
+end
+
+class Child < Parent
+  def initialize(name)
+    super
+  end
+
+  def self.goodbye
+    puts "さよなら"
+  end
+
+  def hello1
+    puts "hello world #{self.name}"
+  end
+end
+
+parent = Parent.new("ryota")
+Parent.hello
+parent.hello
+child = Child.new("yuta")
+Child.hello
+child.hello1
+
+
+p Time.new(2017, 1, 31, 23, 30, 59)
+
+require 'date'
+
+p Date.new(2017, 1, 31)
+
+p DateTime.new(2017, 1, 31, 23, 30, 59)
+p Date.today
+
+api1 = ENV['ryota']
+puts "#{api1}"
