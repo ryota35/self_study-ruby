@@ -836,3 +836,35 @@ p Date.today
 
 api1 = ENV['ryota']
 puts "#{api1}"
+
+p Date.new(2017, 1, 31)
+
+p DateTime.new(2017, 1, 31, 23, 30, 59)
+p Date.today
+
+api1 = ENV['ryota']
+puts "#{api1}"
+
+p Time.new(2017, 1, 31, 23, 30, 59)
+
+require 'date'
+
+p Date.new(2017, 1, 31)
+
+p DateTime.new(2017, 1, 31, 23, 30, 59)
+p Date.today
+
+api1 = ENV['ryota']
+puts "#{api1}"
+
+p Time.new(2017, 1, 31, 23, 30, 59)
+
+require 'date'
+
+p Date.new(2017, 1, 31)
+
+p DateTime.new(2017, 1, 31, 23, 30, 59)
+p Date.today
+
+api1 = ENV['ryota']
+puts "#{api1}"
