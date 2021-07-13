@@ -1488,3 +1488,37 @@ data.each do |n|
   answer << n if array.all?{|m| n % m != 0}
 end
 p answer
+
+p Date.new(2017, 1, 31)
+
+p DateTime.new(2017, 1, 31, 23, 30, 59)
+p Date.today
+
+api1 = ENV['ryota']
+puts "#{api1}"
+
+data = readlines.map{|n| n.split(' ').map(&:to_i)}.flatten
+
+max_length = data[2..-1].max / data[1]
+
+data[2..-1].each.with_index(1) do |n, i|
+    puts "#{i}:" + '*' * (n / data[1]) + '.' * (max_length - n / data[1])
+end
+
+data = [*2..1000]
+answer = []
+
+data.each do |n|
+  array = [*2..n-1]
+  answer << n if array.all?{|m| n % m != 0}
+end
+p answer
+
+data = [*2..1000]
+answer = []
+
+data.each do |n|
+  array = [*2..n-1]
+  answer << n if array.all?{|m| n % m != 0}
+end
+p answer
